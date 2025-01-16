@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+{%load static%}
+<link rel="stylesheet" href="{% static 'myglobal.css' %}">
+
+{%include "header.html" with boy="NGHIADZ" girl="QUYNHDG"%}
+<h1>Hello World!</h1>
+<p>Welcome to my Django project testing page!</p>
+<ul><!-- mymember la bien trong view-->
+
+{{mymember}}
+{% for x in mymember %} 
+    {%if x.id == 1%}
+        <h1>NGHIADZ</h1>
+    {%else%}
+        <h1>{{ x.id }}</h1>
+        <p>
+            {{ x.firstname }}
+            {{ x.lastname }}
+        </p>
+    {%endif%}
+{% endfor %} 
+</ul>
+
+</body>
+</html>
