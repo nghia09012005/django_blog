@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+    
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MY WEBSITE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <style>
+            .carousel-inner img {
+                width: 100%;
+                height: 500px;
+                object-fit: cover;
+            }
+            .card-img-top {
+    width: 100%;
+    height: 200px; /* Hoặc bất kỳ kích thước bạn muốn */
+    object-fit: cover; /* Đảm bảo ảnh không bị méo và vẫn giữ tỷ lệ */
+}
+
+        </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="">WELCOME {{name}} VISIT MY WEBSITE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="/about/?name={{name}}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="/project/?name={{name}}">Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="/contactme/?name={{name}}">Contact Me</a>
+                    </li>
+                </ul>
+                <!-- bỏ sytle hidden để vào trang test searcch youtube api  -->
+                <form class="d-flex" role="search" method="GET" action="/result" style="visibility: hidden;">
+                    <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>WELCOME TO MY FIRST WEBSITE!</strong> Enjoy and discover some interesting here.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <div class="container mt-4">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <!-- co the dung:  {%load static%}
+                src = static 'louis_vouton.jpg' -->
+                <div class="carousel-item active">
+                    <img src="{% static 'louis_vouton.jpg' %}" class="d-block w-100" alt="Slide 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'rosiposter.jpg' %}" class="d-block w-100" alt="Slide 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'competeposter.jpg' %}" class="d-block w-100" alt="Slide 3">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+    </div>
+
+    <div class="container mt-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col mb-4">
+                <div class="card h-100" style="background-color: #f0f8ff;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDwcenMcWH6gu_V9q3Qfl51mGnmlK38KoWzg&s" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">MESSI</h5>
+                        <p class="card-text">Lionel Andrés "Leo" Messi là một cầu thủ bóng đá chuyên nghiệp người Argentina hiện đang thi đấu ở vị trí tiền đạo và là đội trưởng của cả câu lạc bộ Major League Soccer Inter Miami và đội tuyển bóng đá quốc gia Argentina.</p>
+                        <a href="" class="btn btn-primary">Not available</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card h-100" style="background-color: #f0f8ff;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdy8gQ7rUVPYLBR-zATTMl99q9JPht9BbKWA&s" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">RONALDO</h5>
+                        <p class="card-text">Cristiano Ronaldo dos Santos Aveiro GOIH ComM là một cầu thủ bóng đá chuyên nghiệp người Bồ Đào Nha hiện đang thi đấu ở vị trí tiền đạo và là đội trưởng của cả câu lạc bộ Saudi Pro League Al Nassr và đội tuyển bóng đá quốc gia Bồ Đào Nha.</p>
+                        <a href="" class="btn btn-primary">Not available</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card h-100" style="background-color: #f0f8ff;">
+                    <img src="https://cdn-images.vtv.vn/zoom/640_400/2022/12/9/photo-1-16705558997871835381431-crop-1670555912188795621879.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">NEYMAR</h5>
+                        <p class="card-text">Neymar da Silva Santos Júnior, thường được biết đến với tên gọi Neymar, là một cầu thủ bóng đá chuyên nghiệp người Brazil hiện đang thi đấu ở vị trí tiền đạo cánh hoặc tiền vệ tấn công cho câu lạc bộ Saudi Pro League Al Hilal và đội tuyển bóng đá quốc gia Brazil.</p>
+                        <a href="" class="btn btn-primary">Not available</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <div class="container mt-4">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                {% for thumb, channeltitle, dsr, vidlink, channellink in data %}
+                    <div class="col mb-4">
+                        <div class="card h-100" style="background-color: #f0f8ff;">
+                            <img src="{{thumb}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                               <h5><a class="card-title" href="{{channellink}}">{{channeltitle}}</a></h5> 
+                                <p class="card-text">{{dsr}}</p>
+                            </div>
+                            <div class="card-footer text-center">
+                                <a href="{{vidlink}}" class="btn btn-primary">WATCH</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div> -->
+
+
+
+    </div>
+    
+    
+    
+    <footer class="py-3">
+        <p class="text-center">The author is NDZ contact for more information</p>
+        
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+    
+</body>
+
+</html>
