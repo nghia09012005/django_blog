@@ -56,9 +56,11 @@ def home(request):
 
 def about(request):
     name = request.GET.get('name')
+    data = models.contactme.objects.all().values_list()
+    print(data)
     template = loader.get_template('about.html')
     # return HttpResponse(template.render())
-    return render(request,'about.html',{'name':name})
+    return render(request,'about.html',{'name':name,"data": data})
 
 
 
